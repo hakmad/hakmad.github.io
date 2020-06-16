@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+
+	background-color: #eee;
+
+	font-family: sans-serif;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 200px ;
+}
+
+nav {
+	grid-column: 1;
+	position: fixed;
+
+	width: 160px;
+	height: 100%;
+	
+	padding: 20px;
+	
+	background-color: #111;
+	color: #eee;
+	
+	text-align: right;
+}
+
+nav a {
+	color: #eee;
+}
+
+nav a:hover {
+	background-color: #eee;
+	color: #111;
+}
+
+article {
+	grid-column: 2;
+
+	max-width: 1000px;
+	
+	padding: 20px;
+}
+
+a:hover {
+	color: #eee;
+	background-color: blue;
+}
+
+code {
+	padding: 2px;
+	
+	background-color: #111;
+	color: #eee
+}
+
+pre code {
+	display: block;
+
+	padding: 20px;
+
+	background-color: #111;
+	color: #eee;
+}
