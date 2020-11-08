@@ -37,7 +37,6 @@ while running:
 
     # render stuff to the screen
 </code></pre>
-
 <p>This is also known as the input-update-render loop, and you can find out more
 about it <a href="https://gameprogrammingpatterns.com/game-loop.html">here</a>. This
 model is nice because it's simple and so is easy to understand/develop on.
@@ -73,7 +72,6 @@ while running:
 
             # render stuff to the screen for game state
 </code></pre>
-
 <p>This new code solves the problem of not being able to have new states, however
 it also creates some new problems:</p>
 <ul>
@@ -126,7 +124,6 @@ do the same things. Let's create a class to demonstrate this:</p>
     def render(self, screen):
         pass
 </code></pre>
-
 <p>This class provides the basis for all the other states. All the methods
 defined here are going to be overwritten, but we still need to make it clear
 that these methods are needed, so we write them in anyway. Let's define
@@ -164,7 +161,6 @@ another class, <code>Control</code>:</p>
             self.current_state.render(self.screen)
             pygame.display.flip()
 </code></pre>
-
 <p>That's a lot of code going on at once! Let's break it down method by method:</p>
 <ul>
 <li>
@@ -225,7 +221,6 @@ class Square(pygame.sprite.Sprite):
         if self.rect.left &gt; width:
             self.rect.right = 0
 </code></pre>
-
 <p>All we do here is import pygame and set the <code>width</code>, <code>height</code> and <code>fps</code>
 variables, as well as create a <code>Square</code> class (which we will use later).</p>
 <p>Let's create the different states now:</p>
@@ -271,7 +266,6 @@ class Game(States):
         screen.fill((0, 255, 0))
         self.sprites.draw(screen)
 </code></pre>
-
 <p>The first class, <code>Menu</code>, is for the menu state. Not much actually happens in
 this state; it renders the screen blue and when the space bar is pressed the
 state ends. The second class, <code>Game</code>, is for the game state. This state
@@ -291,7 +285,6 @@ control = Control(states, &quot;menu&quot;)
 
 pygame.quit()
 </code></pre>
-
 <p>We first create a dictionary containing all the different states that will be
 in the program: in ours we have the <code>Game</code> and <code>Menu</code> states. Note that the
 key for the <code>Menu</code> state is the same as <code>Game.next</code> - the reason for this is
@@ -330,7 +323,6 @@ definitely possible to share data using a dictionary:</p>
         self.running = True
         self.next = None
 </code></pre>
-
 <p>Now, if a state wanted to share or access some data that was shared, they
 can use the <code>share</code> dictionary that is part of their class.</p>
 <p>We've solved all the major problems. The next question becomes is this even
