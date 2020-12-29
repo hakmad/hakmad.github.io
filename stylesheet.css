@@ -6,24 +6,19 @@ body {
 	font-family: sans-serif;
 }
 
-main {
-	display: grid;
-	grid-template-columns: 200px ;
-}
 
 nav {
-	grid-column: 1;
-	position: fixed;
+	box-sizing: border-box;
 
-	width: 160px;
-	height: 100%;
-	
 	padding: 20px;
 	
 	background-color: #111;
 	color: #eee;
-	
-	text-align: right;
+}
+
+article {
+	max-width: 800px;
+	padding: 20px;
 }
 
 nav a {
@@ -33,14 +28,6 @@ nav a {
 nav a:hover {
 	background-color: #eee;
 	color: #111;
-}
-
-article {
-	grid-column: 2;
-
-	max-width: 1000px;
-	
-	padding: 20px;
 }
 
 a:hover {
